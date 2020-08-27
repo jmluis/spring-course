@@ -10,14 +10,23 @@ import org.springframework.stereotype.Component;
 public class Person {
 
     private Pet pet;
-
-    public Person(Pet p) {
-        this.pet = p;
+    private Address address;
+    
+    public Person(Pet pet, Address address) {
+        this.pet = pet;
+        this.address = address;
     }
+    
+    public Person(Pet pet) {
+        this(pet, null);
+    }
+
+    public Person(Address address) {
+        this(null, address);
+    }
+
+
     public Person(){}
-
-
-
 
     public Pet getPet() {
         return pet;
@@ -25,5 +34,13 @@ public class Person {
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
