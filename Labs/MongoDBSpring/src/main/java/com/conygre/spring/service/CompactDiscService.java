@@ -13,11 +13,11 @@ public class CompactDiscService {
     @Autowired
     CompactDiscDAO daCompactDisc;
 
-    void addCDToCatalog(CompactDisc cd) {
+    public void addCDToCatalog(CompactDisc cd) {
         daCompactDisc.addCompactDisc(cd);
     }
 
-    Collection<CompactDisc> getCatalog() {
+    public Collection<CompactDisc> getCatalog() {
         return daCompactDisc.getAllDiscs();
     }
 }
