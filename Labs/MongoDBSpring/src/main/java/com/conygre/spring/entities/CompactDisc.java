@@ -54,4 +54,12 @@ public class CompactDisc {
         return getArtist() + " - " + getTitle() + " ($" + getPrice() + ")";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        
+        CompactDisc other = (CompactDisc)o;
+        return this.getId().equals(other.getId());
+    }
 }
